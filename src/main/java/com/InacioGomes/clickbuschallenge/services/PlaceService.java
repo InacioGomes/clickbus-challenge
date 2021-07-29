@@ -25,6 +25,10 @@ public class PlaceService {
 		return obj.get();
 	}
 	
+	public List<Place> findByName(String name){
+		return repository.findByNameContaining(name);
+	}
+	
 	public Place insert(Place obj) {
 		obj.setCreatedAt(LocalDateTime.now());
 		obj.setUpdatedAt(LocalDateTime.now());
